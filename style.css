@@ -67,23 +67,20 @@ main {
 }
 
 .box {
-  /* ... (giữ các CSS cũ khác của bạn như border-radius, background...) */
-
-  /* Thêm thuộc tính này để ảnh có thể thay đổi kích thước linh hoạt */
-  width: 100%;
-
-  /* Thêm thuộc tính này để căn giữa ảnh và text theo chiều ngang */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  /* Giữ CSS cũ để cố định chiều cao của thẻ cha,
-     hoặc cho phép nó linh hoạt tùy thuộc vào nội dung ảnh */
-  height: 320px; /* Cân nhắc điều chỉnh chiều cao này cho phù hợp */
-
-  /* Đặt vị trí tương đối để ảnh và nút "Xem" có thể đặt vị trí chính xác */
-  position: relative;
-  padding-bottom: 70px; /* Đặt padding để nút "Xem" không đè lên ảnh */
+    position: relative;
+    width: 100%;
+    height: 320px; /* Cố định chiều cao card cho đều nhau */
+    background-color: rgb(255, 225, 179);
+    border-radius: 15px;
+    text-align: center;
+    padding: 15px 10px 65px 10px; /* Dành khoảng trống 65px ở đáy cho nút Xem */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    
+    /* Dùng Flexbox để căn giữa ảnh theo cả chiều ngang lẫn chiều dọc */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 .box:hover {
     transform: translateY(-5px) scale(1.02);
@@ -97,46 +94,43 @@ main {
     font-family: "Fredoka", sans-serif;
     font-weight: bold;
     margin-bottom: 10px;
+    height: 30px; /* Cố định chiều cao tên để ảnh bên dưới thẳng hàng */
 }
-
-.avatar-img {
-  /* Thiết lập kích thước tối đa cho ảnh sao cho vừa với khung chứa */
-  width: auto;         /* Cho phép chiều rộng tự động điều chỉnh theo chiều cao */
-  height: auto;        /* Cho phép chiều cao tự động điều chỉnh theo chiều rộng */
-  max-width: 100%;    /* Kích thước chiều rộng tối đa không vượt quá thẻ cha */
-  max-height: 180px;  /* Đặt chiều cao tối đa cố định (ví dụ là 180px) để ảnh đồng đều */
-
-  /* Giải pháp chính: đảm bảo ảnh luôn hiển thị đầy đủ, không bị cắt */
-  object-fit: contain;
-
-  /* Căn giữa ảnh trong thẻ cha */
-  display: block;
-  margin: 0 auto;
-
-  /* Giữ CSS cũ của bạn khác như border-radius, border... */
-  border-radius: 12px;
+.avatar-img, #kanh {
+    /* Xóa bỏ hoàn toàn width/height cố định cũ */
+    width: auto !important; 
+    height: auto !important;
+    
+    /* Giới hạn kích thước tối đa trong khung chứa */
+    max-width: 100%;
+    max-height: 180px; /* Chiều cao tối đa dành cho vùng chứa ảnh */
+    
+    /* Hiển thị nguyên vẹn bức ảnh, không cắt gọt bất kỳ góc nào */
+    object-fit: contain !important; 
+    
+    border-radius: 10px;
+    margin: auto 0; /* Tự động căn giữa ảnh vào khoảng trống còn lại */
 }
 
 .btn {
     position: absolute;
-    bottom: 15px;
+    bottom: 12px;
     left: 50%;
-    width: 110px;
-    height: 45px;
     transform: translateX(-50%);
+    width: 100px;
+    height: 40px;
     font-family: "Fredoka", sans-serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
     background-color: rgb(175, 6, 6);
-    border-radius: 25px;
+    border-radius: 20px;
     color: white;
     border: none;
-    transition: transform 100ms ease, background-color 100ms ease;
     cursor: pointer;
+    transition: transform 100ms ease;
 }
 
 .btn:hover {
     transform: translateX(-50%) scale(1.08);
-    background-color: rgb(195, 6, 6);
 }
 
 .btn:active {
