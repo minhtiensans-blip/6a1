@@ -1,0 +1,194 @@
+body {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(255, 239, 219);
+}
+
+h1 {
+    color: rgb(165, 7, 7);
+    font-family: "Fredoka";
+    font-size: xx-large;
+}
+
+h2 {
+    color: rgb(165, 7, 7);
+    font-family: "Fredoka";
+    font-size: larger;
+}
+
+h3 {
+    color: rgb(165, 7, 7);
+    font-family: "Fredoka";
+    font-size: xx-large;
+}
+
+p {
+    color: black;
+    font-family: "Fredoka";
+    font-size: large;
+}
+
+#div1 {
+    width: 150px;
+    border-radius: 35px;
+    background-color: rgb(255, 189, 142);
+}
+
+.div1 {
+    border-radius: 15px;
+    background-color: rgb(255, 225, 179);
+    border: 5px solid rgb(165, 7, 7);
+    transition: 100ms ease;
+    transform: scale(1);
+}
+
+.div1:hover {
+    transition: 100ms ease;
+    transform: scale(1.1);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    grid-gap: 25px;
+}
+
+.box {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: rgb(255, 225, 179);
+    border-radius: 5px;
+    text-align: center;
+    transition: 100ms ease;
+    transform: scale(1);
+}
+
+.box:hover {
+    transition: 100ms ease;
+    transform: scale(1.05);
+}
+
+.label {
+    top: 2px;
+    color: rgb(197, 18, 18);
+    font-size: xx-large;
+    font-family: "Fredoka";
+}
+
+.btn {
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    width: 100px;
+    height: 55px;
+    transform: translateX(-50%) scale(1);
+    font-family: "Fredoka";
+    font-size: larger;
+    background-color: rgb(175, 6, 6);
+    border-radius: 25px;
+    color: white;
+    border: none;
+    transition: 100ms ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transition: 100ms ease;
+    transform: translateX(-50%) scale(1.1);
+}
+
+.btn:active {
+    transition: 100ms ease;
+    transform: translateX(-50%) scale(0.9);
+}
+
+.exit {
+    height: 55px;
+    width: 125px;
+    position: fixed;
+    top: 8px;
+    right: 15px;
+    background-color: rgb(175, 6, 6);
+    color: white;
+    font-family: "Fredoka";
+    font-size: large;
+    border: none;
+    border-radius: 15px;
+    transition: 100ms ease;
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.exit:hover {
+    transition: 100ms ease;
+    transform: scale(1.1);
+}
+
+.exit:active {
+    transition: 100ms ease;
+    transform: scale(0.9);
+}
+
+#kanh {
+    width: 200px;
+    height: 200px;
+}
+
+.img {
+    width: 500px;
+    height: 500px;
+}
+
+/* --- Các lớp CSS cho cửa sổ Pop-up --- */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    position: relative;
+    background-color: rgb(255, 225, 179);
+    border: 4px solid rgb(165, 7, 7);
+    border-radius: 20px;
+    margin: 10% auto;
+    padding: 20px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+    transition: 100ms ease;
+    transform: scale(1);
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: rgb(165, 7, 7);
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: "Fredoka";
+}
+
+.close-btn:hover {
+    transition: 100ms ease;
+    transform: scale(1.2);
+}
+
+#modal-img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 10px;
+}
