@@ -67,28 +67,30 @@ main {
 }
 
 .box {
-    transition: 100ms ease;
     position: relative;
     width: 100%;
-    height: 320px; /* Cố định chiều cao card cho đều nhau */
+    height: 320px;
     background-color: rgb(255, 225, 179);
     border-radius: 15px;
     text-align: center;
-    padding: 15px 10px 65px 10px; /* Dành khoảng trống 65px ở đáy cho nút Xem */
+    padding: 15px 10px 65px 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     
-    /* Dùng Flexbox để căn giữa ảnh theo cả chiều ngang lẫn chiều dọc */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+
+    /* Đặt transition ở đây với thời gian 200ms - 300ms cho mượt hơn */
+    /* Chỉ định rõ transform và box-shadow */
+    transition: transform 200ms ease, box-shadow 200ms ease;
 }
+
 .box:hover {
-    transiton: 100ms ease;
+    /* Đã sửa lỗi chính tả transition và không cần khai báo lại transition ở đây */
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
-
 .label {
     display: block;
     color: rgb(197, 18, 18);
