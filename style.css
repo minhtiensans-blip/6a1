@@ -168,7 +168,7 @@ main {
 
 /* --- Cửa sổ Pop-up (Modal) --- */
 .modal {
-    display: none;
+    display: none; /* Khi bật modal bằng JS thì đổi thành display: flex */
     position: fixed;
     z-index: 100;
     left: 0;
@@ -177,18 +177,28 @@ main {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(3px);
-    transform: scale(2) translate(-50%,-50%)
+    
+    /* Căn giữa khung nội dung hoàn hảo */
+    justify-content: center;
+    align-items: center;
 }
 
+/* Tăng kích thước .modal-content nhưng vẫn responsive */
 .modal-content {
     position: relative;
     background-color: rgb(255, 225, 179);
     border: 4px solid rgb(165, 7, 7);
     border-radius: 20px;
-    margin: 15vh auto;
-    padding: 25px 20px;
+    padding: 30px;
+    
+    /* Đẩy chiều rộng tối đa lên gấp đôi (khoảng 700px - 750px) */
     width: 90%;
-    max-width: 380px;
+    max-width: 700px; 
+    
+    /* Giới hạn chiều cao tối đa phòng trường hợp màn hình dọc ngắn */
+    max-height: 90vh;
+    overflow-y: auto; 
+    
     text-align: center;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
@@ -210,10 +220,12 @@ main {
 }
 
 #modal-img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 12px;
+    width: 100%;
+    max-width: 350px; /* Tăng từ 200px lên 350px */
+    height: auto;
+    max-height: 350px;
+    object-fit: contain;
+    border-radius: 10px;
     margin-top: 15px;
 }
 
