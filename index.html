@@ -1,45 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-    <title>1 website của minh tiến</title>
+    <meta charset="UTF-8">
+    <!-- Thẻ viewport giúp website tự động co giãn theo màn hình thiết bị -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website của Minh Tiến</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Press+Start+2P&family=Rubik+Spray+Paint&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>Một món quà Minh Tiến dành tặng cho lớp 6A1:</h1>
-    <h2>Website này hoạt động tốt nhất khi dùng trên máy tính</h2>
-    <br><br><br><br>
+    <h2>Website này hoạt động tốt trên mọi thiết bị</h2>
 
     <div id="div1">
-        <h1>Lớp 6a1:</h1>
+        <h1>Lớp 6A1:</h1>
     </div>
-    <br>
 
     <main>
-        <div class="box"><label class="label">Khải Anh</label><br><img id="kanh" src="ka.jpg"><br><button class="btn" onclick="showInfo('Khải Anh', 'ka.jpg', 'Thích đá bóng, PBCT, hèn vì hay bắt nạt bạn yếu, luôn nghĩ mình là nhân vật chính')">Xem</button></div>
-        <div class="box"><label class="label">Bảo Anh</label><br><img id="kanh" src="baoanh.png"><br><button class="btn" onclick="showInfo('Bảo Anh', 'baoanh.png', 'Khéo tay, vẽ đẹp nhưng còn hay làm việc riêng trong giờ học.')">Xem</button></div>
-        <div class="box"><label class="label">Bảo Ngọc</label><br><img id="kanh" src="bn.png"><br><button class="btn" onclick="showInfo('Bảo Ngọc', 'bn.png', 'Mít ướt, nhưng học rất giỏi, rất đáng ngưỡng mộ')">Xem</button></div>
-        <div class="box"><label class="label">Nguyên Bảo</label><br><img id="kanh" src="nb.png"><br><button class="btn" onclick="showInfo('Nguyên Bảo', 'nb.png', 'Khéo tay, rất tốt về khoản sáng tạo nhưng về tư duy logic thì chưa được tốt lắm')">Xem</button></div>
-        <div class="box"><label class="label">Châu Khoa</label><br><img id="kanh" src="ck.png"><br><button class="btn" onclick="showInfo('Châu Khoa', 'ck.png', 'Hoà đồng, thân thiện, vui vẻ nhưng vẫn còn hơi nhút nhát')">Xem</button></div>
-        <div class="box"><label class="label">Chí Trung</label><br><img id="kanh" src="ct.png"><br><button class="btn" onclick="showInfo('Chí Trung', 'ct.png', 'Hướng ngoại, thân thiện, kết bạn rất dễ')">Xem</button></div>
-        <div class="box"><label class="label">Quang Huy</label><br><img id="kanh" src="Qh.png"><br><button class="btn" onclick="showInfo('Quang Huy', 'Qh.png', 'Thân thiện nhưng hay hùa theo mặc dù không biết mình đang làm cái gì')">Xem</button></div>
-        <div class="box"><label class="label">Trưng Huy</label><br><img id="kanh" src="th.png"><br><button class="btn" onclick="showInfo('Trưng Huy', 'th.png', 'Được đặt biệt danh là trứng cút nhờ cái đầu nhìn giống trứng cút')">Xem</button></div>
-        <div class="box"><label class="label">Hiếu Kiên</label><br><img id="kanh" src="hk.png"><br><button class="btn" onclick="showInfo('Hiếu Kiên', 'hk.png', 'Học giỏi, thông minh, sáng suốt, được gọi là chị đại vì lớn tuổi hơn hầu hết các em học trong lớp')">Xem</button></div>
-        <div class="box"><label class="label">Nguyễn Văn</label><br><img id="kanh" src="Nv.png"><br><button class="btn" onclick="showInfo('Nguyễn Văn', 'Nv.png', 'Thân thiện, vui vẻ, giỏi giang, nhưng dễ bị bắt nạt đồng thời cũng là mục tiêu bắt nạt của Khải Anh')">Xem</button></div>
-        <div class="box"><label class="label">Lý Văn</label><br><img id="kanh" src="lv.png"><br><button class="btn" onclick="showInfo('Lý Văn', 'lv.png', 'Nổi bật trong đá banh nhờ có tốc độ bứt phá, thân thiện, hài hước, nhưng học chưa được tốt và đồng thời cũng hay hùa')">Xem</button></div>
-        <div class="box"><label class="label">Tường Khang</label><br><img id="kanh" src="tk.png"><br><button class="btn" onclick="showInfo('Tường Khang', 'tk.png', 'Hay ngắt lời các bạn, dễ nóng tính, nhưng bù lại học lực trên mức khá')">Xem</button></div>
-        <div class="box"><label class="label">Nguyễn Long</label><br><img id="kanh" src="long.png"><br><button class="btn" onclick="showInfo('Nguyễn Long', 'long.png', 'Thân thiện, hay bảo vệ bạn Hạo Thiên, và đặc biệt đánh bida rất hay')">Xem</button></div>
-        <div class="box"><label class="label">Tiến Tiến</label><br><img id="kanh" src="tt.png"><br><button class="btn" onclick="showInfo('Tiến Tiến', 'tt.png', 'Học giỏi, Bơi giỏi, Thông minh')">Xem</button></div>
-        <div class="box"><label class="label">Hạo Thiên</label><br><img id="kanh" src="ht.png"><br><button class="btn" onclick="showInfo('Hạo Thiên', 'ht.png', 'Bạn bị chậm nói, hay bị Khải Anh bắt nạt chỉ vì bạn yếu,tuy vậy học lực của bạn ấy cũng ở trên trung bình')">Xem</button></div>
-        <div class="box"><label class="label">Thiên Phúc</label><br><img id="kanh" src="phuc.png"><br><button class="btn" onclick="showInfo('Thiên Phúc', 'phuc.png', 'Thông minh, thân thiện ,rất dễ kết bạn')">Xem</button></div>
-        <div class="box"><label class="label">Phúc Nguyên</label><br><img id="kanh" src="pn.png"><br><button class="btn" onclick="showInfo('Phúc Nguyên', 'pn.png', 'Giỏi TA nhưng chưa được tốt speaking, muốn trở thành 1 cầu thủ đá banh hay cỡ Harry Maguire và nếu không được thì bạn cũng muốn trở thành 1 huấn luyện viên bóng đá cỡ Ferguson')">Xem</button></div>
-        <div class="box"><label class="label">Minh Ngọc</label><br><img id="kanh" src="ck.png"><br><button class="btn" onclick="showInfo('Minh Ngọc', 'ck.png', 'Thân thiện, hoà đồng, nhưng mượn tiền bạn trong trường rất nhiều nhưng đã trả xong - chắc vậy')">Xem</button></div>
-        <div class="box"><label class="label">Minh Nhật</label><br><img id="kanh" src="mn.png"><br><button class="btn" onclick="showInfo('Minh Nhật', 'mn.png', 'Được gọi là đại kiện tướng của lớp, vì đánh cờ vua rất hay chẳng khác gì Lê Quang Liêm')">Xem</button></div>
-        <div class="box"><label class="label">Đỗ Quyên</label><br><img id="kanh" src="dq.png"><br><button class="btn" onclick="showInfo('Đỗ Quyên', 'dq.png', 'Hoà đồng vui vẻ')">Xem</button></div>
-        <div class="box"><label class="label">Phương Vy</label><br><img id="kanh" src="ck.png"><br><button class="btn" onclick="showInfo('Phương Vy', 'ck.png', 'Hoà đồng vui vẻ')">Xem</button></div>
-        <div class="box"><label class="label">Thuý Vy</label><br><img id="kanh" src="tv.png"><br><button class="btn" onclick="showInfo('Thuý Vy', 'tv.png', 'Hoà đồng vui vẻ')">Xem</button></div>
-        <div class="box"><label class="label">Bảo Uyên</label><br><img id="kanh" src="buyen.png"><br><button class="btn" onclick="showInfo('Bảo Uyên', 'buyen.png', 'Là chó nhưng không sống chó hay chảnh chó')">Xem</button></div>
-        <div class="box"><label class="label">Thanh Phong</label><br><img id="kanh" src="tp.png"><br><button class="btn" onclick="showInfo('Thanh Phong', 'tp.png', 'Tuy có thân hình nhỏ con nhưng vẫn là 1 cầu thủ bóng đá xuất sắc')">Xem</button></div>
+        <!-- Thay id="kanh" bằng class="avatar-img" cho tất cả hình ảnh trong thẻ main -->
+        <div class="box">
+            <label class="label">Khải Anh</label>
+            <img class="avatar-img" src="ka.jpg" alt="Khải Anh">
+            <button class="btn" onclick="showInfo('Khải Anh', 'ka.jpg', 'Thích đá bóng, PBCT, hèn vì hay bắt nạt bạn yếu, luôn nghĩ mình là nhân vật chính')">Xem</button>
+        </div>
+        <div class="box">
+            <label class="label">Bảo Anh</label>
+            <img class="avatar-img" src="baoanh.png" alt="Bảo Anh">
+            <button class="btn" onclick="showInfo('Bảo Anh', 'baoanh.png', 'Khéo tay, vẽ đẹp nhưng còn hay làm việc riêng trong giờ học.')">Xem</button>
+        </div>
+        <div class="box">
+            <label class="label">Bảo Ngọc</label>
+            <img class="avatar-img" src="bn.png" alt="Bảo Ngọc">
+            <button class="btn" onclick="showInfo('Bảo Ngọc', 'bn.png', 'Mít ướt, nhưng học rất giỏi, rất đáng ngưỡng mộ')">Xem</button>
+        </div>
+        <div class="box">
+            <label class="label">Nguyên Bảo</label>
+            <img class="avatar-img" src="nb.png" alt="Nguyên Bảo">
+            <button class="btn" onclick="showInfo('Nguyên Bảo', 'nb.png', 'Khéo tay, rất tốt về khoản sáng tạo nhưng về tư duy logic thì chưa được tốt lắm')">Xem</button>
+        </div>
+        <div class="box">
+            <label class="label">Châu Khoa</label>
+            <img class="avatar-img" src="ck.png" alt="Châu Khoa">
+            <button class="btn" onclick="showInfo('Châu Khoa', 'ck.png', 'Hoà đồng, thân thiện, vui vẻ nhưng vẫn còn hơi nhút nhát')">Xem</button>
+        </div>
+        <div class="box">
+            <label class="label">Chí Trung</label>
+            <img class="avatar-img" src="ct.png" alt="Chí Trung">
+            <button class="btn" onclick="showInfo('Chí Trung', 'ct.png', 'Hướng ngoại, thân thiện, kết bạn rất dễ')">Xem</button>
+        </div>
+        <div class="box">
+            <label class="label">Quang Huy</label>
+            <img class="avatar-img" src="Qh.png" alt="Quang Huy">
+            <button class="btn" onclick="showInfo('Quang Huy', 'Qh.png', 'Thân thiện nhưng hay hùa theo mặc dù không biết mình đang làm cái gì')">Xem</button>
+        </div>
+        <div class="box">
+            <label class="label">Trưng Huy</label>
+            <img class="avatar-img" src="th.png" alt="Trưng Huy">
+            <button class="btn" onclick="showInfo('Trưng Huy', 'th.png', 'Được đặt biệt danh là trứng cút nhờ cái đầu nhìn giống trứng cút')">Xem</button>
+        </div>
+        <div class="box">
+            <label class="label">Hiếu Kiên</label>
+            <img class="avatar-img" src="hk.png" alt="Hiếu Kiên">
+            <button class="btn" onclick="showInfo('Hiếu Kiên', 'hk.png', 'Học giỏi, thông minh, sáng suốt, được gọi là chị đại vì lớn tuổi hơn hầu hết các em học trong lớp')">Xem</button>
+        </div>
+        <div class="box">
+            <label class="label">Nguyễn Văn</label>
+            <img class="avatar-img" src="Nv.png" alt="Nguyễn Văn">
+            <button class="btn" onclick="showInfo('Nguyễn Văn', 'Nv.png', 'Thân thiện, vui vẻ, giỏi giang, nhưng dễ bị bắt nạt đồng thời cũng là mục tiêu bắt nạt của Khải Anh')">Xem</button>
+        </div>
+        <div class="box">
+            <label class="label">Lý Văn</label>
+            <img class="avatar-img" src="lv.png" alt="Lý Văn">
+            <button class="btn" onclick="showInfo('Lý Văn', 'lv.png', 'Nổi bật trong đá banh nhờ có tốc độ bứt phá, thân thiện, hài hước, nhưng học chưa được tốt và đồng thời cũng hay hùa')">Xem</button>
+        </div>
+        <div class="box">
+            <label class="label">Tường Khang</label>
+            <img class="avatar-img" src="tk.png" alt="Tường Khang">
+            <button class="btn" onclick="showInfo('Tường Khang', 'tk.png', 'Hay ngắt lời các bạn, dễ nóng tính, nhưng bù lại học lực trên mức khá')">Xem</button>
+        </div>
+        <div class="box">
+            <label class="label">Nguyễn Long</label>
+            <img class="avatar-img" src="long.png" alt="Nguyễn Long">
+            <button class="btn" onclick="showInfo('Nguyễn Long', 'long.png', 'Thân thiện, hay bảo vệ bạn Hạo Thiên, và đặc biệt đánh bida rất hay')">Xem</button>
+        </div>
+        <div class="box">
+            <label class="label">Tiến Tiến</label>
+            <img class="avatar-img" src="tt.png" alt="Tiến Tiến">
+            <button class="btn" onclick="showInfo('Tiến Tiến', 'tt.png', 'Học giỏi, Bơi giỏi, Thông minh')">Xem</button>
+        </div>
+        <div class="box">
+            <label class="label">Hạo Thiên</label>
+            <img class="avatar-img" src="ht.png" alt="Hạo Thiên">
+            <button class="btn" onclick="showInfo('Hạo Thiên', 'ht.png', 'Bạn bị chậm nói, hay bị Khải Anh bắt nạt chỉ vì bạn yếu,tuy vậy học lực của bạn ấy cũng ở trên trung bình')">Xem</button>
+        </div>
+        <div class="box">
+            <label class="label">Thiên Phúc</label>
+            <img class="avatar-img" src="phuc.png" alt="Thiên Phúc">
+            <button class="btn" onclick="showInfo('Thiên Phúc', 'phuc.png', 'Thông minh, thân thiện ,rất dễ kết bạn')">Xem</button>
+        </div>
+        <div class="box">
+            <label class="label">Phúc Nguyên</label>
+            <img class="avatar-img" src="pn.png" alt="Phúc Nguyên">
+            <button class="btn" onclick="showInfo('Phúc Nguyên', 'pn.png', 'Giỏi TA nhưng chưa được tốt speaking, muốn trở thành 1 cầu thủ đá banh hay cỡ Harry Maguire và nếu không được thì bạn cũng muốn trở thành 1 huấn luyện viên bóng đá cỡ Ferguson')">Xem</button>
+        </div>
+        <div class="box">
+            <label class="label">Minh Ngọc</label>
+            <img class="avatar-img" src="ck.png" alt="Minh Ngọc">
+            <button class="btn" onclick="showInfo('Minh Ngọc', 'ck.png', 'Thân thiện, hoà đồng, nhưng mượn tiền bạn trong trường rất nhiều nhưng đã trả xong - chắc vậy')">Xem</button>
+        </div>
+        <div class="box">
+            <label class="label">Minh Nhật</label>
+            <img class="avatar-img" src="mn.png" alt="Minh Nhật">
+            <button class="btn" onclick="showInfo('Minh Nhật', 'mn.png', 'Được gọi là đại kiện tướng của lớp, vì đánh cờ vua rất hay chẳng khác gì Lê Quang Liêm')">Xem</button>
+        </div>
+        <div class="box">
+            <label class="label">Đỗ Quyên</label>
+            <img class="avatar-img" src="dq.png" alt="Đỗ Quyên">
+            <button class="btn" onclick="showInfo('Đỗ Quyên', 'dq.png', 'Hoà đồng vui vẻ')">Xem</button>
+        </div>
+        <div class="box">
+            <label class="label">Phương Vy</label>
+            <img class="avatar-img" src="ck.png" alt="Phương Vy">
+            <button class="btn" onclick="showInfo('Phương Vy', 'ck.png', 'Hoà đồng vui vẻ')">Xem</button>
+        </div>
+        <div class="box">
+            <label class="label">Thuý Vy</label>
+            <img class="avatar-img" src="tv.png" alt="Thuý Vy">
+            <button class="btn" onclick="showInfo('Thuý Vy', 'tv.png', 'Hoà đồng vui vẻ')">Xem</button>
+        </div>
+        <div class="box">
+            <label class="label">Bảo Uyên</label>
+            <img class="avatar-img" src="buyen.png" alt="Bảo Uyên">
+            <button class="btn" onclick="showInfo('Bảo Uyên', 'buyen.png', 'Là chó nhưng không sống chó hay chảnh chó')">Xem</button>
+        </div>
+        <div class="box">
+            <label class="label">Thanh Phong</label>
+            <img class="avatar-img" src="tp.png" alt="Thanh Phong">
+            <button class="btn" onclick="showInfo('Thanh Phong', 'tp.png', 'Tuy có thân hình nhỏ con nhưng vẫn là 1 cầu thủ bóng đá xuất sắc')">Xem</button>
+        </div>
     </main>
 
     <div id="infoModal" class="modal">
@@ -47,11 +145,10 @@
             <span class="close-btn" onclick="closeInfo()">&times;</span>
             <h3 id="modal-name">Tên bạn</h3>
             <img id="modal-img" src="" alt="Ảnh đại diện">
-            <p id="modal-desc" style="margin-top: 15px;"></p>
+            <p id="modal-desc"></p>
         </div>
     </div>
 
-    <script src="script.js">
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
