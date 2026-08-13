@@ -2,7 +2,7 @@
             document.getElementById('modal-name').innerText = name;
             document.getElementById('modal-img').src = imgSrc;
             document.getElementById('modal-desc').innerText = description;
-            document.getElementById('infoModal').style.display = 'block';
+            document.getElementById('infoModal').style.display = 'flex';
         }
 
         function closeInfo() {
