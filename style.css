@@ -1,149 +1,156 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
     background-color: rgb(255, 239, 219);
+    padding: 20px 10px;
+    min-height: 100vh;
 }
 
 h1 {
     color: rgb(165, 7, 7);
-    font-family: "Fredoka";
-    font-size: xx-large;
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: 10px;
 }
 
 h2 {
     color: rgb(165, 7, 7);
-    font-family: "Fredoka";
-    font-size: larger;
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    margin-bottom: 25px;
 }
 
 h3 {
     color: rgb(165, 7, 7);
-    font-family: "Fredoka";
-    font-size: xx-large;
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.8rem;
 }
 
 p {
     color: black;
-    font-family: "Fredoka";
-    font-size: large;
+    font-family: "Fredoka", sans-serif;
+    font-size: 1rem;
+    line-height: 1.4;
 }
 
 #div1 {
-    width: 150px;
+    width: 90%;
+    max-width: 200px;
     border-radius: 35px;
     background-color: rgb(255, 189, 142);
+    padding: 5px 0;
+    margin-bottom: 25px;
 }
 
-.div1 {
-    border-radius: 15px;
-    background-color: rgb(255, 225, 179);
-    border: 5px solid rgb(165, 7, 7);
-    transition: 100ms ease;
-    transform: scale(1);
+#div1 h1 {
+    margin-bottom: 0;
+    font-size: 1.8rem;
 }
 
-.div1:hover {
-    transition: 100ms ease;
-    transform: scale(1.1);
-}
-
+/* --- Khung hiển thị các thẻ bạn học --- */
 main {
     display: grid;
-    grid-template-columns: 300px 300px 300px 300px;
-    grid-gap: 25px;
+    /* Tự động điều chỉnh số cột tùy theo độ rộng màn hình */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-gap: 20px;
+    width: 100%;
+    max-width: 1280px;
+    padding: 10px;
 }
 
 .box {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    height: 320px;
     background-color: rgb(255, 225, 179);
-    border-radius: 5px;
+    border-radius: 15px;
     text-align: center;
-    transition: 100ms ease;
-    transform: scale(1);
+    padding: 15px 10px 70px 10px;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 .box:hover {
-    transition: 100ms ease;
-    transform: scale(1.05);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .label {
-    top: 2px;
+    display: block;
     color: rgb(197, 18, 18);
-    font-size: xx-large;
-    font-family: "Fredoka";
+    font-size: 1.5rem;
+    font-family: "Fredoka", sans-serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.avatar-img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
 .btn {
     position: absolute;
-    bottom: 3px;
+    bottom: 15px;
     left: 50%;
-    width: 100px;
-    height: 55px;
-    transform: translateX(-50%) scale(1);
-    font-family: "Fredoka";
-    font-size: larger;
+    width: 110px;
+    height: 45px;
+    transform: translateX(-50%);
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.1rem;
     background-color: rgb(175, 6, 6);
     border-radius: 25px;
     color: white;
     border: none;
-    transition: 100ms ease;
+    transition: transform 100ms ease, background-color 100ms ease;
     cursor: pointer;
 }
 
 .btn:hover {
-    transition: 100ms ease;
-    transform: translateX(-50%) scale(1.1);
+    transform: translateX(-50%) scale(1.08);
+    background-color: rgb(195, 6, 6);
 }
 
 .btn:active {
-    transition: 100ms ease;
-    transform: translateX(-50%) scale(0.9);
+    transform: translateX(-50%) scale(0.95);
 }
 
 .exit {
-    height: 55px;
-    width: 125px;
+    height: 45px;
+    width: 100px;
     position: fixed;
-    top: 8px;
+    top: 15px;
     right: 15px;
     background-color: rgb(175, 6, 6);
     color: white;
-    font-family: "Fredoka";
-    font-size: large;
+    font-family: "Fredoka", sans-serif;
+    font-size: 1rem;
     border: none;
     border-radius: 15px;
-    transition: 100ms ease;
-    transform: scale(1);
+    transition: transform 100ms ease;
     cursor: pointer;
+    z-index: 90;
 }
 
 .exit:hover {
-    transition: 100ms ease;
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 .exit:active {
-    transition: 100ms ease;
-    transform: scale(0.9);
+    transform: scale(0.95);
 }
 
-#kanh {
-    width: 200px;
-    height: 200px;
-}
-
-.img {
-    width: 500px;
-    height: 500px;
-}
-
-/* --- Các lớp CSS cho cửa sổ Pop-up --- */
-
+/* --- Cửa sổ Pop-up (Modal) --- */
 .modal {
     display: none;
     position: fixed;
@@ -152,7 +159,8 @@ main {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
 }
 
 .modal-content {
@@ -160,35 +168,56 @@ main {
     background-color: rgb(255, 225, 179);
     border: 4px solid rgb(165, 7, 7);
     border-radius: 20px;
-    margin: 10% auto;
-    padding: 20px;
-    width: 350px;
+    margin: 15vh auto;
+    padding: 25px 20px;
+    width: 90%;
+    max-width: 380px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .close-btn {
-    transition: 100ms ease;
-    transform: scale(1);
     position: absolute;
     top: 10px;
     right: 15px;
     color: rgb(165, 7, 7);
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
     cursor: pointer;
-    font-family: "Fredoka";
+    font-family: "Fredoka", sans-serif;
+    transition: transform 100ms ease;
 }
 
 .close-btn:hover {
-    transition: 100ms ease;
     transform: scale(1.2);
 }
 
 #modal-img {
-    width: 200px;
-    height: 250px;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
-    border-radius: 10px;
-    margin-top: 10px;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+#modal-desc {
+    margin-top: 15px;
+    word-wrap: break-word;
+}
+
+/* --- Media Queries cho màn hình nhỏ (Điện thoại) --- */
+@media (max-width: 600px) {
+    body {
+        padding: 15px 5px;
+    }
+
+    main {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-gap: 15px;
+    }
+
+    .modal-content {
+        margin: 20vh auto;
+        padding: 20px 15px;
+    }
 }
