@@ -5,10 +5,7 @@
 }
 
 body {
-    display: flex;
-    flex-direction: column;
     text-align: center;
-    align-items: center;
     background-color: rgb(255, 239, 219);
     padding: 20px 10px;
     min-height: 100vh;
@@ -47,7 +44,7 @@ p {
     border-radius: 35px;
     background-color: rgb(255, 189, 142);
     padding: 5px 0;
-    margin-bottom: 25px;
+    margin: 0 auto 25px auto; /* Căn giữa block */
 }
 
 #div1 h1 {
@@ -55,14 +52,14 @@ p {
     font-size: 1.8rem;
 }
 
-/* --- Khung hiển thị các thẻ bạn học --- */
+/* Lưới hiển thị các thẻ */
 main {
     display: grid;
-    /* Tự động điều chỉnh số cột tùy theo độ rộng màn hình */
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     grid-gap: 20px;
     width: 100%;
     max-width: 1280px;
+    margin: 0 auto; /* Căn giữa toàn bộ lưới */
     padding: 10px;
 }
 
@@ -75,22 +72,19 @@ main {
     text-align: center;
     padding: 15px 10px 65px 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 200ms ease, box-shadow 200ms ease;
     
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-
-    /* Đặt transition ở đây với thời gian 200ms - 300ms cho mượt hơn */
-    /* Chỉ định rõ transform và box-shadow */
-    transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
 .box:hover {
-    /* Đã sửa lỗi chính tả transition và không cần khai báo lại transition ở đây */
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
+
 .label {
     display: block;
     color: rgb(197, 18, 18);
@@ -98,22 +92,17 @@ main {
     font-family: "Fredoka", sans-serif;
     font-weight: bold;
     margin-bottom: 10px;
-    height: 30px; /* Cố định chiều cao tên để ảnh bên dưới thẳng hàng */
+    height: 30px;
 }
-.avatar-img, #kanh {
-    /* Xóa bỏ hoàn toàn width/height cố định cũ */
-    width: auto !important; 
+
+.avatar-img {
+    width: auto !important;
     height: auto !important;
-    
-    /* Giới hạn kích thước tối đa trong khung chứa */
     max-width: 100%;
-    max-height: 180px; /* Chiều cao tối đa dành cho vùng chứa ảnh */
-    
-    /* Hiển thị nguyên vẹn bức ảnh, không cắt gọt bất kỳ góc nào */
-    object-fit: contain !important; 
-    
+    max-height: 180px;
+    object-fit: contain !important;
     border-radius: 10px;
-    margin: auto 0; /* Tự động căn giữa ảnh vào khoảng trống còn lại */
+    margin: auto 0;
 }
 
 .btn {
@@ -137,75 +126,41 @@ main {
     transform: translateX(-50%) scale(1.08);
 }
 
-.btn:active {
-    transform: translateX(-50%) scale(0.95);
-}
-
-.exit {
-    height: 45px;
-    width: 100px;
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    background-color: rgb(175, 6, 6);
-    color: white;
-    font-family: "Fredoka", sans-serif;
-    font-size: 1rem;
-    border: none;
-    border-radius: 15px;
-    transition: transform 100ms ease;
-    cursor: pointer;
-    z-index: 90;
-}
-
-.exit:hover {
-    transform: scale(1.08);
-}
-
-.exit:active {
-    transform: scale(0.95);
-}
-
-/* --- Cửa sổ Pop-up (Modal) --- */
+/* Modal căn giữa chuẩn 100% không lo ăn theo body */
 .modal {
-    display: none; /* JS mở modal sẽ chuyển thành display: flex */
+    display: none;
     position: fixed;
-    z-index: 1000;
-    left: 0;
+    z-index: 9999;
     top: 0;
-    width: 100%;
-    height: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(3px);
-
-    /* Căn giữa hộp thoại theo cả chiều ngang lẫn chiều dọc */
-    justify-content: center;
-    align-items: center;
 }
 
-/* 2. Khung nội dung Modal */
 .modal-content {
-    position: relative;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Kỹ thuật kéo chính xác về tâm */
+    
     background-color: rgb(255, 225, 179);
     border: 4px solid rgb(165, 7, 7);
     border-radius: 20px;
     padding: 30px 20px;
     
-    /* Phóng to gấp đôi nhưng vẫn co giãn theo màn hình */
     width: 90%;
-    max-width: 700px;
+    max-width: 700px; /* To gấp đôi cũ */
     max-height: 85vh;
     overflow-y: auto;
     
     text-align: center;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-    
-    /* Xóa bỏ mọi margin và transform cũ gây lệch vị trí */
-    margin: 0 !important;
-    transform: none !important;
-    top: auto !important;
-    left: auto !important;
 }
+
 .close-btn {
     position: absolute;
     top: 10px;
@@ -215,11 +170,6 @@ main {
     font-weight: bold;
     cursor: pointer;
     font-family: "Fredoka", sans-serif;
-    transition: transform 100ms ease;
-}
-
-.close-btn:hover {
-    transform: scale(1.2);
 }
 
 #modal-img {
@@ -231,24 +181,7 @@ main {
     border-radius: 12px;
     margin-top: 15px;
 }
+
 #modal-desc {
     margin-top: 15px;
-    word-wrap: break-word;
-}
-
-/* --- Media Queries cho màn hình nhỏ (Điện thoại) --- */
-@media (max-width: 600px) {
-    body {
-        padding: 15px 5px;
-    }
-
-    main {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        grid-gap: 15px;
-    }
-
-    .modal-content {
-        margin: 20vh auto;
-        padding: 20px 15px;
-    }
 }
